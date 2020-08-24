@@ -1,0 +1,109 @@
+<mat-toolbar></mat-toolbar>
+<div fxLayout="column" fxLayoutAlign="start center" style="padding:20px;" fxLayoutGap="1em">
+<mat-card>
+<h4>Purchase Order</h4>
+<form [formGroup]="registrationform">
+  <div fxLayout="column" fxLayoutGap="1em" fxLayoutAlign="start space-between">
+<div fxLayout="row">
+  <div fxLayout="column" fxFlex="50">
+    <label>Customer Name:</label>
+  </div>
+  <div fxLayout="column" fxFlex="30">
+    <input  placeholder="name" [(ngModel)]='urvashi' formControlName="customername">
+  </div>
+
+
+
+  </div>
+  <div fxLayout="row" >
+    <div fxLayout="column" fxFlex="50">
+      <label>Customer code:</label>
+    </div>
+    <div fxLayout="column" fxFlex="30">
+      <input matInput placeholder="code" formControlName="code">
+    </div>
+  
+  
+  
+    </div>
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+      <label>Search Category:</label>
+      </div>
+    
+    <div fxLayout="column" fxFlex="30">
+      <select style="height: 25px;" (change)="firstDropDownChanged($event.target.value)"  formControlName="category">
+        <option [value]="1" >Category 1</option>
+        <option [value]="2">Category 2</option>
+ 
+        </select>
+    </div>
+  
+    </div>
+    <div fxLayout="row">
+      <table >
+        <tr>
+        <th>
+          Sr.No
+        </th>
+        <th>
+          Category
+        </th>
+        <th>
+          Product Name
+        </th>
+        <th>
+          Brand Name
+        </th>
+        <th>
+          UOM (Unit of Measurement)
+        </th>
+        <th>
+          	MRP
+        </th>
+        <th>
+          	% Discount – (Discount to be filled in manually)
+        </th>
+        <th>
+          	Our Price
+        </th>
+        <th>
+          	Quantity
+        </th>
+        <th>
+        	Total price
+        </th>
+        <th>
+          Check Box 
+        </th>
+        </tr>
+        <tr  *ngFor="let product of allProducts">
+          <td>
+
+          </td>
+          <td>
+            {{product.category}}
+          </td>
+          <td>
+          {{product.productname}}
+          </td>
+          <td>
+            {{product.brandName}}
+          </td>
+          <td>
+            
+          </td>
+          <td>{{product.MRP}}</td>
+          <td>{{product.Discount}}</td>
+          <td>{{product.OurPrice}}</td>
+          <td>{{product.Quantity}}</td>
+          <td>{{product.Totalprice}}</td>
+         
+          <td><input type="checkbox"></td>
+        </tr>
+      </table>
+    </div>
+    </div>
+    </form>
+
+</mat-card>

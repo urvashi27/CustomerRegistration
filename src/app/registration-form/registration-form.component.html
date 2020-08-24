@@ -1,0 +1,263 @@
+<mat-toolbar></mat-toolbar>
+
+<div fxLayout="column" fxLayoutAlign="start center" style="padding:20px;" fxLayoutGap="1em">
+  <mat-card >
+    <h3>Customer Registration Form</h3>
+  <form [formGroup]="registrationform" >
+    <div fxLayout="column" fxLayoutGap="1em">
+     <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+        <label>Client Name:</label>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+        <input matInput placeholder="name" formControlName="name">
+      </div>
+
+
+
+      </div>
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+        <label>Customer Name:</label>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+
+        <input placeholder="Customer name" formControlName="customername">
+
+      </div>
+
+    </div>
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+        <label>Entity:</label>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+
+        <select  formControlName="entity">
+          
+             <option *ngFor="let option of selectOptions" [value]="option">
+               {{option}}
+             </option>
+       </select>
+
+      </div>
+
+    </div>
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+        <label>Address 1:</label>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+
+        <input  placeholder="Address 1" formControlName="address1">
+
+      </div>
+
+    </div>
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+        <label>Address 2:</label>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+
+        <input  placeholder="Address 2" formControlName="address2">
+
+      </div>
+
+    </div>
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+        <label>Address 3:</label>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+
+        <input  placeholder="Address 3" formControlName="address3">
+
+      </div>
+
+    </div>
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+        <label>Landmark</label>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+
+        <input  placeholder="landmark" formControlName="landmark">
+
+      </div>
+
+    </div>
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+        <label>Latitude</label>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+
+        <input  placeholder="latitude" formControlName="latitude">
+
+      </div>
+    </div>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>Longtitude</label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+  
+          <input  placeholder="longtitude" formControlName="longtitude">
+  
+        </div>
+  
+      </div>
+
+    
+    
+    <div class="kyc">kyc</div>
+    <div fxLayout="row">
+      <div fxLayout="column" fxFlex="50">
+        <label>GST No.</label>
+      </div>
+      <div fxLayout="column" fxFlex="30">
+
+        <input  placeholder="GST Number" formControlName="gst">
+
+      </div>
+    </div>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>PAN No.</label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+  
+          <input  placeholder="PAN Number" formControlName="pan">
+  
+        </div>
+  
+      </div>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>Billing to be done in the Name of:</label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+  
+          <input  formControlName="billing">
+  
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>Bank:</label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+  
+          <input  formControlName="bank">
+  
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>Branch Name:</label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+  
+          <input  formControlName="branch">
+  
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>Account Number:</label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+  
+          <input  formControlName="accountno">
+  
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>Account Type:</label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+  
+          <input  formControlName="accounttype">
+  
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>IFSC:</label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+  
+          <input  formControlName="ifsc">
+  
+        </div>
+      </div>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>Upload Document</label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+  
+          <input formControlName="file" #Image type="file" (change)="handleFileInput($event.target.files)"/>
+          <img width="50%" *ngIf="imageUrl" [src]="imageUrl" class="image">
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center">
+       
+          <input formControlName="terms" type="checkbox">
+        
+        
+        Check the box to accept the Terms and Conditions
+        
+      </div>
+      <h5>Special Instructions:</h5>
+      <div fxLayout="row">
+        <div fxLayout="column" fxFlex="50">
+          <label>
+           No Delivery on:
+          </label>
+        </div>
+        <div fxLayout="column" fxFlex="30">
+          <select  formControlName="days" >
+          
+            <option *ngFor="let option of days" [value]="option">
+              {{option}}
+            </option>
+      </select>
+        </div>
+        
+      </div>
+      <div fxLayout="row" fxLayoutGap="1em">
+        <div fxLayout="column" fxFlex="50">
+          <label>No Delivery Time</label>
+        </div>
+        <div fxLayout="column" fxFlex="25">
+         From<select formControlName="time">
+          <option *ngFor="let option of time" [value]="option">
+            {{option}}
+          </option>
+         </select>
+        </div>
+        <div fxLayout="column" fxFlex="25">
+        To <select formControlName="time">
+          <option *ngFor="let option of time" [value]="option">
+            {{option}}
+          </option>
+        </select>
+        </div>
+
+      </div>
+     <div fxLayout="row" fxLayoutAlign="center center">
+       <button mat-raised-button class="primary"  style="background-color:  #3b5998;color: white;" type="submit" (click)="submit()" >Submit</button>
+
+     </div>
+     <h5>Terms & Conditions<br>
+     *Delivery will be done at Main Entrance Only<br>
+     *Vehicles will not wait for more than***for delivery</h5>
+
+
+    </div>
+  </form>
+  </mat-card>
+</div>
